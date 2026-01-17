@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Fondo */
+#background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/images/fondo_pantalla.webp") center/cover no-repeat;
+  z-index: 1;
+}
+
+/* Título */
+#title {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  z-index: 2;
+}
+
+/* Loading container */
+#loading {
+  position: absolute;
+  bottom: 25px;
+  left: 20px;
+  right: 20px;
+  z-index: 3;
+}
+
+/* Texto arriba de la barra */
+#loading-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  color: #f5c26b; /* dorado suave */
+  font-weight: bold;
+  text-shadow: 0 0 6px rgba(0,0,0,0.8);
+}
+
+/* Barra */
+#loading-bar {
+  width: 100%;
+  height: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+/* Progreso */
+#loading-progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    #d4af37,
+    #ffcc33,
+    #d4af37
+  );
+  transition: width 0.25s ease;
+}
+
+
+
+/* ===== MAIN SCREEN ===== */
+
+#main-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Fondo principal (barco) */
+#main-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/images/fondo_principal.webp") center/cover no-repeat;
+  z-index: 1;
+}
+
+/* Pirata */
+#pirate-container {
+  position: absolute;
+  bottom: 16vh;
+  left: 24%;
+  width: 33vh;
+  z-index: 3;
+}
+
+#pirate {
+  width: 100%;
+  height: auto;
+}
+#pirate,
+#map{
+    filter: drop-shadow(0 12px 18px rgba(0,0,0,0.6));
+}
+
+/* Mapa */
+#map {
+  position: absolute;
+  bottom: 22vh;
+  right: 1vw;
+  width: 34vw;
+  z-index: 3;
+}
+
+/* Utilidad */
+.hidden {
+  display: none;
+}
+
+/* ===== HUMO DE LA PISTOLA ===== */
+
+.smoke {
+  position: absolute;
+  width: 8vw;
+  max-width: 500px;
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+/* Posición base del humo (ajusta según la pistola) */
+.smoke-1,
+.smoke-2 {
+  bottom: 86%;
+  left: 8%;
+}
+
+/* Humo 1 */
+.smoke-1 {
+  animation: smokeAnim 3.5s infinite ease-out;
+}
+
+/* Humo 2 (desfasado) */
+.smoke-2 {
+  animation: smokeAnim 3.5s infinite ease-out;
+  animation-delay: 1.6s;
+}
+
+@keyframes smokeAnim {
+  0% {
+    transform: translate(0, 0) scale(0.6);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translate(-10px, -50px) scale(1.2);
+    opacity: 0;
+  }
+}
