@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pirate Mine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Telegram WebApp -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="app">
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div id="loading-screen">
+
+    <div id="background"></div>
+
+    <img src="assets/images/titulo.webp" id="title" alt="Pirate Mine">
+
+    <div id="loading">
+      <div id="loading-header">
+        <span>Loading</span>
+        <span id="loading-percent">0%</span>
+      </div>
+
+      <div id="loading-bar">
+        <div id="loading-progress"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== MAIN SCREEN ===== -->
+  <div id="main-screen" class="hidden">
+
+    <div id="main-background"></div>
+
+    <!-- Pirata -->
+    <div id="pirate-container">
+        <img src="assets/images/pirate.webp" id="pirate">
+
+    <!-- Humo -->
+        <img src="assets/images/humo.jpg" class="smoke smoke-1">
+        <img src="assets/images/humo.jpg" class="smoke smoke-2">
+    </div>
+
+    <!-- Mapa -->
+    <img src="assets/images/mapa.webp" id="map">
+
+  </div>
+
+</div>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>
