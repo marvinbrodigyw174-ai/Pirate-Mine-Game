@@ -101,8 +101,8 @@ html, body {
 #pirate-container {
   position: absolute;
   bottom: 16vh;
-  left: 20%;
-  width: 33vh;
+  left: 15%;
+  width: 28vh;
   z-index: 3;
 }
 
